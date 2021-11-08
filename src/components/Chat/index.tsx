@@ -4,6 +4,7 @@ import { io } from 'socket.io-client';
 import { api } from '../../services/api';
 import styles from  './styles.module.scss'
 import avatar_cliente from '../../assets/avatar_cliente.png'
+import avatar_usuario from '../../assets/user-profile1.jpeg'
 
 export function Chat(){
     type MenuAtendimento = {
@@ -23,7 +24,7 @@ export function Chat(){
 
     const messageQueue: Mensagem[] = [];
     const date = new Date();
-    const socket = io('http://localhost:4000');
+    const socket = io('https://chatbot-api-ifsp.herokuapp.com:4000');
 
     socket.on('new_message', (newMessage:Mensagem) =>  {
         messageQueue.push(newMessage);
@@ -43,7 +44,7 @@ export function Chat(){
                      id: null,
                      texto: "Bem vindo ao atendimento da empresa XXXXX. Selecione a opção desejada:",
                      autor: `Bot • ${date.getHours()}:${date.getMinutes()}`,
-                     avatar_url: "/src/assets/user-profile1.jpeg"
+                     avatar_url: avatar_usuario
                  }
             )
             
@@ -85,7 +86,7 @@ export function Chat(){
                 id: null,
                 texto: "Você será transferido para o atendimento especializado... Aguarde",
                 autor: `Bot • ${date.getHours()}:${date.getMinutes()}`,
-                avatar_url: "/src/assets/user-profile1.jpeg"
+                avatar_url: avatar_usuario
             })
             setMenuAtendimento([])
         }else {
