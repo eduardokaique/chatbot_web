@@ -24,7 +24,7 @@ export function Chat(){
 
     const messageQueue: Mensagem[] = [];
     const date = new Date();
-    const socket = io('https://chatbot-api-ifsp.herokuapp.com:4000');
+    const socket = io('https://chatbot-api-ifsp.herokuapp.com');
 
     socket.on('new_message', (newMessage:Mensagem) =>  {
         messageQueue.push(newMessage);
