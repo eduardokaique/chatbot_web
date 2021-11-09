@@ -42,7 +42,7 @@ export function Chat(){
              setMensagem( 
                  {
                      id: null,
-                     texto: "Bem vindo ao atendimento da empresa XXXXX. Selecione a opção desejada:",
+                     texto: "Bem vindo ao atendimento da empresa do Provedor de Hospedagem . Selecione a opção desejada:",
                      autor: `Bot • ${date.getHours()}:${date.getMinutes()}`,
                      avatar_url: avatar_usuario
                  }
